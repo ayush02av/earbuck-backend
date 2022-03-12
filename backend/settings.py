@@ -29,13 +29,15 @@ ENVIRONMENT_TO_BE_USED = os.getenv("ENVIRONMENT_TO_BE_USED")
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# if ENVIRONMENT_TO_BE_USED == "DEVELOPMENT":
+#     DEBUG = True
+#     ALLOWED_HOSTS = []
+# else:
+#     DEBUG = False
+#     ALLOWED_HOSTS = [os.getenv("FRONTEND_HOST")]
 
-if ENVIRONMENT_TO_BE_USED == "DEVELOPMENT":
-    DEBUG = True
-    ALLOWED_HOSTS = []
-else:
-    DEBUG = True
-    ALLOWED_HOSTS = [os.getenv("FRONTEND_HOST")]
+DEBUG = True
+ALLOWED_HOSTS = []
 
 # Application definition
 INSTALLED_APPS = [
